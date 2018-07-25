@@ -1,0 +1,14 @@
+{
+  "name": "minesweepers_monitor",
+  "version": "1.0.0",
+  "description": "Buscaminas de robota",
+  "scripts": {
+    "radio": "node scripts/radio.js"
+  },
+  "author": "Guillermo Bernal",
+  "license": "MIT",
+  "dependencies": {
+    "rosnodejs": "^2.2.0",
+    "sx127x": "git+https://git@github.com/vynci/node-sx127x.git"
+  }
+}
