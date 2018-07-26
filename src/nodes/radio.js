@@ -15,7 +15,7 @@ const SX127x = require("sx127x");
   const sx127x = new SX127x({
     frequency: 433e6
   });
-  let cameraPub = nh.advertise("/camera_feed", std_msgs.String);
+  let cameraPub = nh.advertise("//mine_camera_data", std_msgs.String);
   let minePub = nh.advertise("/mine", std_msgs.String);
   let gpsPub = nh.advertise("/gps", std_msgs.String);
   sx127x.open(function(err) {
