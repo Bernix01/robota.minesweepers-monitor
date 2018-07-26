@@ -46,9 +46,13 @@ const SX127x = require("sx127x");
       const msg = new std_msgs.String();
       msg.data = "[20,20,100,100]";
       cameraPub.publish(msg);
+      
+    },1300)
+    setInterval(()=>{
+      const msg = new std_msgs.String();
       msg.data = "[20,20,100,100,200,300,100,30]";
       cameraPub.publish(msg);
-    },500)
+    },2500)
 
     // enable receive mode
     sx127x.receive(function(err) {
