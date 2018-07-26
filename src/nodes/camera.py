@@ -8,6 +8,8 @@ import numpy as np
 from std_msgs.msg import String
 
 def cb(data):
+    print(data)
+    print(type(data))
     camera_img = np.zeros((640,480,3), np.uint8)
     mine_location_data = json.loads(data)
     mine_location_data = [mine_location_data[i:i + 4] for i in xrange(0, len(mine_location_data), 4)]
