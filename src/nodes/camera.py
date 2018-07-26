@@ -18,10 +18,11 @@ def cb(data):
     rospy.loginfo("Hola")
     cv2.imshow("camara", camera_img)
     rospy.loginfo("Hola2")
-    cv2.waitKey(500)
+    cv2.waitKey(2)
     rospy.loginfo("chao")
 
-def camera():   
+def camera():
+
     rospy.init_node('camera')
     rospy.Subscriber('camera_feed', String, cb)
         
