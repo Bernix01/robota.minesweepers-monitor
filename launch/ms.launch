@@ -1,4 +1,4 @@
 <launch>
-  <node name="radio" pkg="minesweepers" type="radio.js" />
-  <node name="camera" pkg="minesweepers" type="camera.py" />
+  <node name="radio" pkg="minesweepers_monitor" type="radio.js" />
+  <node name="camera" pkg="minesweepers_monitor" type="camera.py" />
 </launch>
