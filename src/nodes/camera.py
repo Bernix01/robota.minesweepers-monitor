@@ -15,7 +15,7 @@ def cb(data):
     for mine in mine_location_data:
         x, y, w, h = mine
         cv2.rectangle(camera_img, (x, y), (x+w, y+h), (0, 0, 255), 2)
-    rospy.loginfo("Hola")
+    rospy.loginfo(data)
     cv2.imshow("camara", camera_img)
     rospy.loginfo("Hola2")
     cv2.waitKey(2)
