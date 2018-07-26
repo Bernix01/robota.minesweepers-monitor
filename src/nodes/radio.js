@@ -7,7 +7,7 @@ const std_msgs = rosnodejs.require("std_msgs").msg;
 const SX127x = require("sx127x");
 
 (async () => {
-  await rosnodejs.initNode("my_node", {
+  await rosnodejs.initNode("radio", {
     onTheFly: true
   });
 
