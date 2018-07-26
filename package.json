@@ -8,6 +8,8 @@
   "author": "Guillermo Bernal",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3",
     "rosnodejs": "^2.2.0",
     "sx127x": "git+https://git@github.com/vynci/node-sx127x.git"
   }
