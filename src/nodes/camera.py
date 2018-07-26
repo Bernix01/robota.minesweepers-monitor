@@ -10,7 +10,7 @@ from std_msgs.msg import String
 def cb(data):
     data = data.data
     camera_img = np.zeros((480,640,3), np.uint8)
-    rospy.loginf("Hola")
+    rospy.loginfo("Hola")
     mine_location_data = json.loads(data)
     mine_location_data = [mine_location_data[i:i + 4] for i in xrange(0, len(mine_location_data), 4)]
     for mine in mine_location_data:
@@ -22,14 +22,13 @@ def cb(data):
 def camera():   
     rospy.init_node('camera')
     rospy.Subscriber('camera_feed', String, cb)
-    rate = rospy.Rate(10)  # 10hz
-    rospy.spin()
         
 
 
 if __name__ == '__main__':
     try:
         camera()
+        rospy.spin()
     except rospy.ROSInterruptException:
         pass
     cv2.destroyAllWindows()
