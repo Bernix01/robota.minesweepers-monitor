@@ -10,6 +10,7 @@ from std_msgs.msg import String
 def cb(data):
     data = data.data
     camera_img = np.zeros((480,640,3), np.uint8)
+    rospy.loginf("Hola")
     mine_location_data = json.loads(data)
     mine_location_data = [mine_location_data[i:i + 4] for i in xrange(0, len(mine_location_data), 4)]
     for mine in mine_location_data:

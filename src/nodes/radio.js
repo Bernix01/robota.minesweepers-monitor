@@ -17,6 +17,7 @@ const SX127x = require("sx127x");
   });
   let cameraPub = nh.advertise("/camera_feed", std_msgs.String);
   let minePub = nh.advertise("/mine", std_msgs.String);
+  let gpsPub = nh.advertise("/gps", std_msgs.String);
   sx127x.open(function(err) {
     console.log("open", err ? err : "success");
 
@@ -35,6 +36,9 @@ const SX127x = require("sx127x");
       }
       if (jsonData.action == "dm"){
         minePub.publish(msg);
+      }
+      if (jsonData.action == "gps"){
+        gpsPub.publish(msg);
       }
     });
 
