@@ -1,4 +1,5 @@
 <launch>
   <node name="radio" pkg="minesweepers_monitor" type="radio.js" />
   <node name="camera" pkg="minesweepers_monitor" type="camera.py" />
+  <node name="gps_map" pkg="minesweepers_monitor" type="gps.js" />
 </launch>
