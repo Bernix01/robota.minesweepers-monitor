@@ -16,7 +16,7 @@ def cb(data):
         x, y, w, h = mine
         cv2.rectangle(camera_img, (x, y), (x+w, y+h), (0, 0, 255), 2)
     cv2.imshow("camara", camera_img)
-    cv2.waitKey(10)
+    cv2.waitKey(2)
 
 def camera():   
     rospy.init_node('camera')
@@ -31,3 +31,4 @@ if __name__ == '__main__':
         camera()
     except rospy.ROSInterruptException:
         pass
+    cv2.destroyAllWindows()
