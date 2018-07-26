@@ -22,12 +22,16 @@ class Camera():
         msg = CompressedImage()
         msg.header.stamp = rospy.Time.now()
         msg.format = "jpeg"
-        msg.data = np.array(cv2.imencode('.jpg', camera_img)[1]).tostring()
+        encode_param=[int(cv2.IMWRITE_JPEG_QUALITY),90]
+        result, jpg_img = cv2.imencode('.jpg', camera_img, encode_param)
+        if result == False:
+            rospy.logerr("Failed to encode jpg")
+        msg.data = np.array(jpg_img).tostring()
         # Publish new image
         self.image_pub.publish(msg)
 
     def __init__(self):
-        self.image_pub = rospy.Publisher('camera_feed', CompressedImage)
+        self.image_pub = rospy.Publisher('/camera_feed/compressed', CompressedImage)
         rospy.init_node('camera')
         rospy.Subscriber('mine_camera_data', String, self.cb)
         
